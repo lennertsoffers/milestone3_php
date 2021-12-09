@@ -1,18 +1,16 @@
 <?php
-echo "Inside K8s with MySQL <br>";
 $conn = new mysqli("mariadb", "root", "1", "milestone3");
+
 // Check connection
 if ($conn->connect_error) {
  die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT name FROM users";
+
+$sql = "SELECT name FROM user";
 $result = $conn->query($sql);
-if ($result->num_rows > 0) {
- // output data of each row
- while($row = $result->fetch_assoc()) {
-  echo $row['name']."<br>";
- }
-} else {
- echo "0 results";
-}
+
+$row = mysqli_fetch_assoc($result);
+
+echo "<h1>" . $row["surname"] . " " . $row["name"] . " has reached milestone3</h1>";
+
 $conn->close();

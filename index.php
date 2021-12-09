@@ -6,7 +6,7 @@ if ($conn->connect_error) {
  die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT name FROM user";
+$sql = "SELECT * FROM user";
 $result = $conn->query($sql);
 
 $row = mysqli_fetch_assoc($result);

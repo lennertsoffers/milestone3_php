@@ -1,6 +1,6 @@
 <?php
 echo "Inside K8s with MySQL <br>";
-$conn = new mysqli("mysql8-service", "root", ".sweetpwd.", "my_db");
+$conn = new mysqli("mariadb", "root", "1", "milestone3");
 // Check connection
 if ($conn->connect_error) {
  die("Connection failed: " . $conn->connect_error);
